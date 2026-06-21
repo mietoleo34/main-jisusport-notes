@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>极速体育 — 产品说明</title>
+  <style>
+    /* 浅灰背景 · 分区卡片 · 细边框 · 柔和阴影  */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f0f2f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+      color: #1e2229;
+      line-height: 1.6;
+      padding: 2rem 1.25rem;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* 卡片容器 */
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e6e9ed;
+      padding: 2rem 1.8rem;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.02);
+    }
+
+    /* 深色细边框点缀 */
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #dde1e6;
+    }
+
+    .section-sub {
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-bottom: 1rem;
+    }
+
+    .hero {
+      text-align: left;
+      padding: 2.5rem 2rem 2rem;
+      background: linear-gradient(145deg, #ffffff, #f8f9fb);
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 650;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.3rem;
+      color: #101317;
+    }
+
+    .hero .tagline {
+      font-size: 1.05rem;
+      color: #3a414b;
+      max-width: 70%;
+    }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      margin-top: 0.5rem;
+    }
+
+    .bullet-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      flex: 1 1 200px;
+    }
+
+    .bullet-list li::before {
+      content: "▸";
+      color: #2f7b9e;
+      font-weight: 700;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-item {
+      background: #f7f9fc;
+      border-radius: 12px;
+      padding: 1.2rem 1rem;
+      border: 1px solid #e1e5ea;
+    }
+
+    .feature-item h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-item p {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .use-scenario {
+      background: #f5f7fa;
+      border-radius: 12px;
+      padding: 1.4rem 1.2rem;
+      margin: 0.8rem 0;
+      border-left: 4px solid #6a8ca0;
+    }
+
+    .use-scenario strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: #1e293b;
+    }
+
+    .faq-item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #e9edf2;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item q {
+      font-weight: 500;
+    }
+
+    .faq-item p {
+      margin-top: 0.2rem;
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .link-note {
+      background: #f1f5f9;
+      border-radius: 20px;
+      padding: 0.2rem 0.8rem;
+      font-size: 0.85rem;
+      color: #1e4b5e;
+      display: inline-block;
+      margin-top: 0.4rem;
+    }
+
+    .footer-note {
+      font-size: 0.85rem;
+      color: #6b7280;
+      text-align: center;
+      padding: 1.5rem 0 0.5rem;
+    }
+
+    a {
+      color: #1A5C7A;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    a:hover {
+      border-bottom-color: #1A5C7A;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.75rem;
+      }
+
+      .card {
+        padding: 1.5rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .hero .tagline {
+        max-width: 100%;
+      }
+
+      .bullet-list {
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero 卡片  -->
+  <div class="card hero">
+    <h1>极速体育 · 产品摘要</h1>
+    <div class="tagline">
+      聚焦赛事数据与动态资讯，为关注竞技体育的用户提供结构化的信息聚合。
+      不追求冗余功能，只围绕实时比分、赛程、统计与队伍动态构建轻量体验。
+    </div>
+  </div>
+
+  <!-- 核心亮点  -->
+  <div class="card">
+    <div class="section-title">▎亮点 · 边界清晰</div>
+    <ul class="bullet-list">
+      <li>赛事实时数据覆盖多联赛，字段精简，更新节奏稳定。</li>
+      <li>预赛程与历史战绩同页面呈现，减少页面跳转。</li>
+      <li>队伍/选手详情页集成近况、交锋记录与基础统计。</li>
+      <li>移动端适配优先，保留关键文字信息，不依赖重型图表。</li>
+      <li>界面克制，不插入自动播放内容或非相关推荐。</li>
+    </ul>
+  </div>
+
+  <!-- 使用建议 + 场景  -->
+  <div class="card">
+    <div class="section-title">▎使用建议 · 场景</div>
+    <div class="use-scenario">
+      <strong>赛前快速预览</strong>
+      查看未来 24‑48 小时重点赛程，对比近期交锋数据，辅助了解对阵背景。
+    </div>
+    <div class="use-scenario">
+      <strong>赛中实时参考</strong>
+      关注比分、控球率、射门/命中统计等关键字段，页面每 30–60 秒刷新数据快照。
+    </div>
+    <div class="use-scenario">
+      <strong>赛后回溯查阅</strong>
+      通过历史赛程模块调取已结束场次的基础数据，方便复盘或记录。
+    </div>
+    <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #3f4a56;">
+      * 数据来源为公开赛事信息，延迟与精度受上游影响，建议结合官方渠道交叉确认。
+    </div>
+  </div>
+
+  <!-- 可信说明 + 链接自然嵌入 -->
+  <div class="card">
+    <div class="section-title">▎关于服务边界</div>
+    <p style="margin-bottom: 0.6rem;">
+      <a href="https://main-jisusport.com">极速体育</a> 本身不生产原始赛事信号，而是对公开的赛程、比分及统计数据进行结构化整理与展示。
+      平台致力于降低信息获取门槛，不提供任何形式的投注引导或预测结论。
+    </p>
+    <p style="margin-bottom: 0.6rem;">
+      所有数据均标注参考时间，历史数据可查范围以平台展示为准。如遇到数据异常，可通过页面反馈通道告知。
+    </p>
+    <p>
+      用户在使用过程中如需了解某个联赛的详细赛制，或对比特定队伍历史战绩，可直接在 <a href="https://main-jisusport.com">极速体育</a> 内通过搜索/筛选定位。
+      无需注册即可浏览绝大部分内容。
+    </p>
+  </div>
+
+  <!-- FAQ 摘要卡片  -->
+  <div class="card">
+    <div class="section-title">▎常见问题 · 摘要</div>
+    <div class="faq-item">
+      <q>页面数据多久更新一次？</q>
+      <p>赛中数据每 30–60 秒同步一次；赛程与历史数据每日至少更新两次。具体以页面标注时间为准。</p>
+    </div>
+    <div class="faq-item">
+      <q>是否支持查看过往赛季数据？</q>
+      <p>部分主流联赛保留近 3–5 个赛季的基础统计与排名，具体覆盖范围可在对应赛事页查看。</p>
+    </div>
+    <div class="faq-item">
+      <q>移动端浏览体验如何？</q>
+      <p>采用响应式布局，赛程与比分卡片在手机屏幕上保持可读性，无需横向滚动。建议使用系统默认浏览器。</p>
+    </div>
+    <div class="faq-item" style="border-bottom: none;">
+      <q>是否提供 API 或数据导出？</q>
+      <p>目前未开放公开 API，仅支持页面浏览。如有合作或数据需求，可通过网站联系渠道沟通。</p>
+    </div>
+  </div>
+
+  <!-- 简短的引用提醒  -->
+  <div style="background: transparent; margin-bottom: 1.2rem; font-size: 0.85rem; color: #5d6775; text-align: right; border-top: 1px solid #dce0e5; padding-top: 0.6rem;">
+    产品说明 · 版本 2406
+  </div>
+
+  <div class="footer-note">
+    基于公开赛事信息整理，仅供个人参考。使用 <a href="https://main-jisusport.com">极速体育</a> 即表示理解上述边界。
+  </div>
+</div>
+</body>
+</html>
