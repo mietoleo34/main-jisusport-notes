@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沙巴体育 · 再访与收藏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+            background: #f3f9fc;
+            color: #1e2b34;
+            line-height: 1.6;
+            padding: 0 1rem 3rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #c8e0e8;
+        }
+        .logo-area {
+            font-weight: 500;
+            font-size: 1.25rem;
+            letter-spacing: 0.02em;
+            color: #0d6b7a;
+        }
+        .logo-area span {
+            background: #0d6b7a;
+            color: #f3f9fc;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+            font-weight: 400;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            font-size: 0.9rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1e2b34;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #0d6b7a;
+        }
+
+        /* hero 简洁问候 */
+        .hero {
+            margin: 3rem 0 2.5rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #093e48;
+            line-height: 1.3;
+        }
+        .hero p {
+            max-width: 640px;
+            margin: 1rem auto 0;
+            color: #3a535e;
+            font-size: 1.05rem;
+        }
+
+        /* 核心卡片区 — 场景模块 */
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin: 2.5rem 0 2rem;
+        }
+        .scene-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem 1.5rem 2rem;
+            box-shadow: 0 6px 18px rgba(5, 80, 90, 0.06);
+            transition: all 0.2s ease;
+            border: 1px solid #dceff3;
+            display: flex;
+            flex-direction: column;
+        }
+        .scene-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(5, 80, 90, 0.08);
+            border-color: #aad0db;
+        }
+        .scene-card .icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.4rem;
+            display: inline-block;
+        }
+        .scene-card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #093e48;
+            margin: 0.5rem 0 0.6rem;
+        }
+        .scene-card p {
+            color: #2b4957;
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+            flex: 1;
+        }
+        .scene-card .tag {
+            display: inline-block;
+            background: #d8f0f5;
+            color: #0d6b7a;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            align-self: flex-start;
+            margin-top: 0.5rem;
+        }
+
+        /* 介绍段落 — 自然衔接链接 */
+        .intro-block {
+            background: #e3f2f6;
+            padding: 2rem 2.2rem;
+            border-radius: 32px;
+            margin: 2rem 0 2.5rem;
+            border-left: 5px solid #0d6b7a;
+        }
+        .intro-block p {
+            font-size: 1rem;
+            color: #1f3b44;
+            margin-bottom: 0.8rem;
+        }
+        .intro-block p:last-child {
+            margin-bottom: 0;
+        }
+        .intro-block a {
+            color: #0a5b68;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #7bb7c4;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+        .intro-block a:hover {
+            color: #04333b;
+            text-decoration-color: #0a5b68;
+        }
+        .highlight-link {
+            background: #c4e2ea;
+            padding: 0.1rem 0.3rem;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        /* FAQ 摘要 — 简洁折叠样式 */
+        .faq-summary {
+            margin: 2rem 0 1.2rem;
+        }
+        .faq-summary h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #093e48;
+            margin-bottom: 1.2rem;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 20px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.7rem;
+            border: 1px solid #d4e6ec;
+            transition: border-color 0.15s;
+        }
+        .faq-item:hover {
+            border-color: #9ac2cf;
+        }
+        .faq-question {
+            font-weight: 500;
+            color: #0a4d5a;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: default;
+        }
+        .faq-question::after {
+            content: "▾";
+            font-size: 0.9rem;
+            color: #6b9fae;
+            transition: 0.15s;
+        }
+        .faq-answer {
+            color: #2b4957;
+            font-size: 0.9rem;
+            padding-top: 0.4rem;
+            border-top: 1px dashed #c8e0e8;
+            margin-top: 0.6rem;
+        }
+
+        /* 再次收藏提示 */
+        .reminder {
+            background: white;
+            border-radius: 60px;
+            padding: 0.9rem 2rem;
+            text-align: center;
+            border: 1px solid #b5d6e0;
+            margin: 2.2rem 0 1.8rem;
+            font-size: 0.95rem;
+            color: #1a4552;
+            box-shadow: 0 2px 6px rgba(5, 80, 90, 0.04);
+        }
+        .reminder span {
+            background: #0d6b7a;
+            color: white;
+            padding: 0.15rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            margin-left: 0.6rem;
+        }
+
+        /* 页脚 */
+        .footer-note {
+            border-top: 1px solid #cde3e9;
+            padding-top: 1.8rem;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #4b6d79;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+        }
+        .footer-note a {
+            color: #0d6b7a;
+            text-decoration: none;
+            border-bottom: 1px dotted #8bb9c6;
+        }
+        .footer-note a:hover {
+            border-bottom-style: solid;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 0 0.8rem 2rem;
+            }
+            .top-nav {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+            .nav-links {
+                gap: 1.2rem;
+                font-size: 0.85rem;
+                flex-wrap: wrap;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .intro-block {
+                padding: 1.5rem 1.2rem;
+            }
+            .scene-grid {
+                gap: 1.2rem;
+            }
+            .faq-item {
+                padding: 0.8rem 1rem;
+            }
+            .reminder {
+                padding: 0.7rem 1rem;
+                border-radius: 40px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 导航 -->
+    <nav class="top-nav">
+        <div class="logo-area">
+            ⚡ 沙巴体育 <span>再次收藏</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">首页</a>
+            <a href="#">场景</a>
+            <a href="#">说明</a>
+            <a href="#">收藏</a>
+        </div>
+    </nav>
+
+    <!-- Hero 问候 -->
+    <section class="hero">
+        <h1>再次回来，还是熟悉的地方</h1>
+        <p>无论隔了多久，点开收藏夹，或者直接在地址栏输入名字——<br>你总会在那里找到想要的节奏。</p>
+    </section>
+
+    <!-- 三个场景模块 (网格卡片) -->
+    <div class="scene-grid">
+        <div class="scene-card">
+            <span class="icon">🔖</span>
+            <h3>收藏即捷径</h3>
+            <p>把链接放进浏览器书签或手机主屏幕，下次不用搜索，一次点击直接抵达。</p>
+            <span class="tag">常用</span>
+        </div>
+        <div class="scene-card">
+            <span class="icon">🔄</span>
+            <h3>再次访问</h3>
+            <p>历史记录里总能找到那个熟悉的名称，顺手一点，就像走进一家常去的店。</p>
+            <span class="tag">自然</span>
+        </div>
+        <div class="scene-card">
+            <span class="icon">📌</span>
+            <h3>持续关注</h3>
+            <p>不需要每天惦记，只要你想起来，它就在那里，保持着自己一贯的节奏。</p>
+            <span class="tag">稳定</span>
+        </div>
+    </div>
+
+    <!-- 核心介绍 + 自然链接 -->
+    <div class="intro-block">
+        <p>
+            如果你之前见过或使用过 <a href="https://portal-shabasport.com" class="highlight-link">沙巴体育</a>，
+            大概会记得那种简洁直接的体验。不需要翻找，不需要重复注册，
+            一切信息都围绕体育内容展开，节奏清晰。
+        </p>
+        <p>
+            很多人会在看完比赛、或者某个周末的晚上，重新打开那个标签页。
+            它不像一个需要刻意维护的账号，更像一个随时可以走进去的空间。
+            把 <a href="https://portal-shabasport.com">沙巴体育</a> 放进收藏夹之后，
+            每次访问都变成了一种习惯动作——打开书签、加载、浏览。
+        </p>
+        <p>
+            持续关注一件事，有时候只需要一个固定的入口。
+            而入口本身，越轻越好。
+        </p>
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <div class="faq-summary">
+        <h2>一些常见说明</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">需要注册或登录才能浏览吗？</div>
+            <div class="faq-answer">大部分内容可以直接查看，无需强制注册。部分个性化功能可能需要简单登录，但浏览过程很直接。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">收藏之后会不会失效或改变？</div>
+            <div class="faq-answer">只要保持链接不变，收藏永久有效。如果将来有地址调整，通常会提前告知。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">手机端和电脑端体验一样吗？</div>
+            <div class="faq-answer">页面针对移动端做了适配，在小屏幕上同样清晰，卡片、文字都会自动调整。</div>
+        </div>
+    </div>
+
+    <!-- 再次访问 & 收藏提示 -->
+    <div class="reminder">
+        ⭐ 把 <strong>沙巴体育</strong> 加入书签，下次再访不用思考
+        <span>推荐</span>
+    </div>
+
+    <!-- 页脚 (含链接) -->
+    <footer class="footer-note">
+        <span>内容方向 · 再访与收藏</span>
+        <a href="https://portal-shabasport.com">沙巴体育</a>
+        <span>· 自然叙述 · 蓝绿点缀</span>
+    </footer>
+</div>
+</body>
+</html>
